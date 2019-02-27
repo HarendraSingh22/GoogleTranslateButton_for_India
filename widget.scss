@@ -2,17 +2,39 @@
 html, body {height:100%;}
 body {
   background: #212121;
-  background-image: url("https://images.unsplash.com/photo-1547132025-0868fd15d909?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
-  background-size: cover;
-  padding: 0 16px;
-	// top:0!important; // Prevent Google Topbar from pushing down body.
-  h1 {color:#fff; margin: 1em 0 0.5em 0; letter-spacing: -1px;}
-	h2 {color:#fff; margin: 0 0 1em 0; font-weight:100;font-size: 1.8em; letter-spacing: -1px;}
-  p {color:#fff;}
-  a {color:#fff;}
+
 }
-// .goog-te-banner-frame {display:none;} // Don't show Google Topbar
-// #goog-gt-tt {display:none!important;visibility:hidden!important;}
+
+
+
+// ============ HIDE TOP BAR ============ 
+.goog-te-banner-frame.skiptranslate {display: none!important;} 
+body {top: 0px!important;}
+
+/* ================================== *\
+    Mediaqueries
+\* ================================== */
+@media (max-width: 667px) {
+	#google_translate_element {
+		bottom: calc(100% - 50% - 53px);
+		left: 16px!important;
+		width: 100%!important;
+		goog-te-gadget {
+			width:100%!important;
+		}
+		.skiptranslate {
+			width:100%!important;			
+		}
+		.goog-te-gadget-simple {
+			width: calc(100% - 32px)!important;
+			text-align: center;
+		}	
+	}
+}
+
+/* ================================== *\
+    Copy from below
+\* ================================== */
 
 #google_translate_element {
   position: absolute;
@@ -72,32 +94,4 @@ body {
     //     OR
     display: none;
 }
-
-// ============ HIDE TOP BAR ============ 
-.goog-te-banner-frame.skiptranslate {display: none!important;} 
-body {top: 0px!important;}
-
-/* ================================== *\
-    Mediaqueries
-\* ================================== */
-@media (max-width: 667px) {
-	#google_translate_element {
-		bottom: calc(100% - 50% - 53px);
-		left: 16px!important;
-		width: 100%!important;
-		goog-te-gadget {
-			width:100%!important;
-		}
-		.skiptranslate {
-			width:100%!important;			
-		}
-		.goog-te-gadget-simple {
-			width: calc(100% - 32px)!important;
-			text-align: center;
-		}	
-	}
-}
-
-
-
 
